@@ -1,0 +1,4 @@
+<resources>
+
+    <style name="Theme.CaixaForum" parent="@style/Theme.Leanback" />
+</resources>
