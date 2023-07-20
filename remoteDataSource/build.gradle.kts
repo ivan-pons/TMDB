@@ -23,7 +23,6 @@ android {
 }
 
 dependencies {
-    implementation(project(":localDataSource"))
 
     implementation(libs.androidx.ktx)
     implementation(libs.dagger.hilt)

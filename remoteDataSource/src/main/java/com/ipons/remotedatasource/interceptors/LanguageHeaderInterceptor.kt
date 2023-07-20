@@ -9,14 +9,16 @@ class LanguageHeaderInterceptor : Interceptor {
     @Throws(IOException::class)
     override fun intercept(chain: Interceptor.Chain): Response {
         val originalRequest = chain.request()
+        val urlWithQueryParam = originalRequest.url.newBuilder()
+            .addQueryParameter("language", Language_CODE)
+            .build()
         val newRequest = originalRequest.newBuilder()
-            .header("x-lang", Language_CODE)
+            .url(urlWithQueryParam)
             .build()
         return chain.proceed(newRequest)
     }
 
     companion object {
-        private const val Language_CODE =
-            "es" // FIXME debo coger el del sistema, esperaremos a tener el vasco
+        private const val Language_CODE = "es"
     }
 }

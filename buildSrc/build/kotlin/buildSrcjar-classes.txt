@@ -1,1 +1,1 @@
-C:\Users\Ivan\StudioProjects\CaixaForum\buildSrc\build\classes\kotlin\main\Configurations.class
+C:\Users\Ivan\StudioProjects\TMDB_AndroidTV\buildSrc\build\classes\kotlin\main\Configurations.class

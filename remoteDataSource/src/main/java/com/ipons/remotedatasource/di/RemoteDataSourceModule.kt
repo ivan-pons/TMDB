@@ -48,7 +48,7 @@ class RemoteDataSourceModule {
         moshi: Moshi
     ): CoreApi {
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://pre.caixaforumplus.org") //FIXME hay ver como nos llegará
+            .baseUrl("https://api.themoviedb.org")
             .client(okHttpClientBuilder.build())
             .addConverterFactory(MoshiConverterFactory.create(moshi).asLenient())
             .build()
