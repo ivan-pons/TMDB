@@ -1,4 +1,4 @@
 <resources>
 
-    <style name="Theme.CaixaForum" parent="@style/Theme.Leanback" />
+    <style name="Theme.TMDB" parent="@style/Theme.Leanback" />
 </resources>
