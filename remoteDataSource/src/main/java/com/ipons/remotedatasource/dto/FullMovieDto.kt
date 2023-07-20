@@ -8,9 +8,8 @@ import com.squareup.moshi.Json
 data class FullMovieDto(
     @Json(name = "adult") val adult: Boolean?,
     @Json(name = "backdrop_path") val backdropPath: String?,
-    @Json(name = "belongs_to_collection") val belongsToCollection: Any?,
     @Json(name = "budget") val budget: Int?,
-    @Json(name = "genres") val genres: List<GenreDto?>?,
+    @Json(name = "genres") val genres: List<GenreDto>?,
     @Json(name = "homepage") val homepage: String?,
     @Json(name = "id") val id: Int?,
     @Json(name = "imdb_id") val imdbId: String?,
@@ -30,7 +29,8 @@ data class FullMovieDto(
     @Json(name = "title") val title: String?,
     @Json(name = "video") val video: Boolean?,
     @Json(name = "vote_average") val voteAverage: Double?,
-    @Json(name = "vote_count") val voteCount: Int?
+    @Json(name = "vote_count") val voteCount: Int?,
+    val credits: CreditsDto?
 )
 
 @JsonClass(generateAdapter = true)
