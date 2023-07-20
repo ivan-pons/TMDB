@@ -8,5 +8,5 @@ data class CastBO(
     val name: String,
     val order: Int,
     val popularity: Double,
-    val profilePath: String
+    val profileImage: String
 )

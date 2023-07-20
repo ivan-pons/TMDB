@@ -5,5 +5,5 @@ data class CrewBO(
     val job: String,
     val name: String,
     val popularity: Double,
-    val profilePath: String
+    val profileImage: String
 )
