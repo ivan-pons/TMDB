@@ -7,11 +7,11 @@
 }
 
 android {
-    namespace = "com.mediapro.caixaforum"
+    namespace = "com.ipons.tmdb"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.mediapro.caixaforum"
+        applicationId = "com.ipons.tmdb"
         minSdk = 21
         targetSdk = 33
         versionCode = 1

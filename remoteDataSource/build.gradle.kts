@@ -6,7 +6,7 @@
 }
 
 android {
-    namespace = "com.mediapro.remoteDataSource"
+    namespace = "com.ipons.remoteDataSource"
     compileSdk = 33
     defaultConfig {
         minSdk = 21

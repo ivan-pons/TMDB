@@ -17,7 +17,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "CaixaForum"
+rootProject.name = "TMDB"
 
 include(":app")
 include(":domain")

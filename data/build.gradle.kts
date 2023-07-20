@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.mediapro.data"
+    namespace = "com.ipons.data"
     compileSdk = 33
 
     defaultConfig {

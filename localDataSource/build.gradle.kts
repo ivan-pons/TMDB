@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.mediapro.localDataSource"
+    namespace = "com.ipons.localDataSource"
     compileSdk = 33
     defaultConfig {
         minSdk = 21
