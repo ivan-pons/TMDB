@@ -1,4 +1,19 @@
 <resources>
 
     <style name="Theme.TMDB" parent="@style/Theme.Leanback" />
+
+    <style name="LeftMenuStyle">
+        <item name="android:textSize">12dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginStart">14dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="LeftMenuStyleTitle" parent="LeftMenuStyle">
+        <item name="android:textSize">23sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

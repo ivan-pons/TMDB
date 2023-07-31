@@ -58,6 +58,7 @@ dependencies {
     implementation(libs.androidx.navigation.ui)
     implementation(libs.youbora.adapter.exoplayer)
     implementation(libs.androidx.paging)
+    implementation("com.google.android.material:material:1.5.0")
 
     kapt(libs.dagger.compiler)
 }
