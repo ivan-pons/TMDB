@@ -13,8 +13,18 @@ interface CoreApi {
     @GET("/3/movie/popular")
     suspend fun getPopularFilms(): Response<ResultDto>
 
+    @GET("/3/movie/top_rated")
+    suspend fun getTopFilms(): Response<ResultDto>
+
+    @GET("/3/movie/upcoming")
+    suspend fun getUpcomingFilms(): Response<ResultDto>
+
+    @GET("/3/movie/now_playing")
+    suspend fun getNowPlayingFilms(): Response<ResultDto>
+
+
     @GET("/3/search/movie")
-    suspend fun searchMovie(@Query("query") searchText: String) : Response<ResultDto>
+    suspend fun searchMovie(@Query("query") searchText: String): Response<ResultDto>
 
     @GET("/3/movie/{movieId}")
     suspend fun getFullMovie(@Path("movieId") movieId: Int): Response<FullMovieDto>

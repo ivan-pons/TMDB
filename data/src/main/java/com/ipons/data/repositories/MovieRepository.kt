@@ -12,8 +12,21 @@ class MovieRepository @Inject constructor(
     private val movieRemoteDataSource: MovieRemoteDataSource
 ): IMovieRepository {
 
+
     override suspend fun getPopulars(): List<BasicItemBO> {
         return movieRemoteDataSource.getPopularsMovies().toListBasicItemBO()
+    }
+
+    override suspend fun getTopFilms(): List<BasicItemBO> {
+        return movieRemoteDataSource.getTopFilms().toListBasicItemBO()
+    }
+
+    override suspend fun getUpcomingFilms(): List<BasicItemBO> {
+        return movieRemoteDataSource.getUpcomingFilms().toListBasicItemBO()
+    }
+
+    override suspend fun getNowPlayingFilms(): List<BasicItemBO> {
+        return movieRemoteDataSource.getNowPlayingFilms().toListBasicItemBO()
     }
 
     override suspend fun search(searchText: String): List<BasicItemBO> {
