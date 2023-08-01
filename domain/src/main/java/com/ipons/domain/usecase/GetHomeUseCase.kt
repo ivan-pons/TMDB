@@ -22,8 +22,15 @@ class GetHomeUseCase @Inject constructor(
 
             val home =
                 listOf(popularsDeferred, nowDeferred, topDeferred, upcomingDeferred).awaitAll()
-            return@coroutineScope home.filterNotNull()
+                    .filterNotNull()
+            val spotLighted = getHightligted(home)
+            return@coroutineScope listOf(spotLighted) + home
         }
+    }
+
+    private fun getHightligted(home: List<ContainerBO>): ContainerBO {
+        val spotLighted = home.map { it.items.first() }
+        return ContainerBO(0, "Destacados", spotLighted)
     }
 
     private suspend fun getPopulars(): ContainerBO? {
