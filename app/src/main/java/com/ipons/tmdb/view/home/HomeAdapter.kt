@@ -9,6 +9,7 @@ import com.ipons.tmdb.extensions.dataBindingInflate
 class HomeAdapter(
     private val home: List<ContainerBO>
 ) : RecyclerView.Adapter<ItemCarouselBasicVH>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemCarouselBasicVH =
         ItemCarouselBasicVH(parent.dataBindingInflate(R.layout.item_home_basic))
 
