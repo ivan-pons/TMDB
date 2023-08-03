@@ -1,5 +1,6 @@
 package com.ipons.tmdb.view.search
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,6 +16,7 @@ import com.ipons.tmdb.R
 import com.ipons.tmdb.base.BaseFragment
 import com.ipons.tmdb.databinding.SearchFragmentBinding
 import com.ipons.tmdb.extensions.launchAndCollect
+import com.ipons.tmdb.view.information.InformationActivity
 import com.ipons.tmdb.view.search.keyboard.KeyboardAdapter
 import com.ipons.tmdb.view.search.keyboard.KeyboardConstants.KEY_DELETE_POSITION
 import com.ipons.tmdb.view.search.keyboard.KeyboardConstants.KEY_SPACE_POSITION
@@ -43,7 +45,14 @@ class SearchFragment : BaseFragment() {
         startAnimation()
         initStatus()
         initActions()
+        initFocusListener()
         searchViewModel.viewCreated()
+    }
+
+    private fun initFocusListener() {
+        binding.searchView.setOpenMenuListener {
+            searchViewModel.menuSelected()
+        }
     }
 
     override fun onResume() {
@@ -107,8 +116,9 @@ class SearchFragment : BaseFragment() {
     }
 
     private fun showSearch(items: List<BasicItemBO>) {
-        adapter = SearchAdapter(items)
-
+        adapter = SearchAdapter(items) {
+            searchViewModel.itemSelected(it)
+        }
         binding.rvSearch.adapter = adapter
 
     }
@@ -140,6 +150,6 @@ class SearchFragment : BaseFragment() {
     }
 
     private fun openItem(searchItem: BasicItemBO) {
-        //Navigate Information
+        startActivity(Intent(requireContext(), InformationActivity::class.java))
     }
 }

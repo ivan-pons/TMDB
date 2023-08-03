@@ -7,11 +7,12 @@ import com.ipons.tmdb.R
 import com.ipons.tmdb.extensions.dataBindingInflate
 
 class SearchAdapter(
-    private val items: List<BasicItemBO>
+    private val items: List<BasicItemBO>,
+    private val onClick: (BasicItemBO) -> Unit
 ) : RecyclerView.Adapter<ItemSearchVH>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemSearchVH =
-        ItemSearchVH(parent.dataBindingInflate(R.layout.item_search))
+        ItemSearchVH(parent.dataBindingInflate(R.layout.item_film), onClick)
 
     override fun getItemCount(): Int = items.size
 
