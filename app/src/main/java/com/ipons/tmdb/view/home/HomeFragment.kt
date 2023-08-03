@@ -1,5 +1,6 @@
 package com.ipons.tmdb.view.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,8 +8,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.ipons.domain.model.ContainerBO
+import com.ipons.tmdb.MainActivity
 import com.ipons.tmdb.databinding.HomeFragmentBinding
 import com.ipons.tmdb.extensions.launchAndCollect
+import com.ipons.tmdb.view.information.InformationActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -30,6 +33,18 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         homeViewModel.getHome()
         initStatusListeners()
+        initFocusListener()
+    }
+
+    private fun initFocusListener() {
+        binding.layout.setOpenMenuListener {
+            openMenu()
+        }
+    }
+
+    private fun openMenu() {
+        val activity = requireActivity()
+        if (activity is MainActivity) activity.requestMenuFocus()
     }
 
     private fun initStatusListeners() {
@@ -41,7 +56,9 @@ class HomeFragment : Fragment() {
     }
 
     private fun setAdapter(home: List<ContainerBO>) {
-        binding.rvHome.adapter = HomeAdapter(home)
+        binding.rvHome.adapter = HomeAdapter(home) {
+            startActivity(Intent(requireContext(), InformationActivity::class.java))
+        }
     }
 
 }

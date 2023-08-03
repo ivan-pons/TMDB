@@ -12,6 +12,7 @@ import com.ipons.tmdb.databinding.ActivityMainBinding
 import com.ipons.tmdb.utils.DimensUtils.dpToPx
 import com.ipons.tmdb.view.home.HomeFragment
 import com.ipons.tmdb.view.menu.TvLeftMenuView
+import com.ipons.tmdb.view.search.SearchFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -43,7 +44,7 @@ class MainActivity : FragmentActivity(), TvLeftMenuView.MenuItemClickListener {
         when (menuId) {
             TvLeftMenuView.SEARCH_MENU -> {
                 binding.rlLeftMenu.setCurrentSelected(TvLeftMenuView.SEARCH_MENU)
-                fragment = HomeFragment()
+                fragment = SearchFragment()
                 actualFragment = SEARCH
             }
 
