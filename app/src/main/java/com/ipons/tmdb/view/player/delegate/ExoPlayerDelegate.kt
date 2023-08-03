@@ -17,7 +17,6 @@ import com.google.android.exoplayer2.ui.PlayerView
 import com.ipons.domain.model.SourceBO
 import com.ipons.tmdb.R
 import com.ipons.tmdb.view.player.AudioAdapter
-import com.ipons.tmdb.view.player.CustomEventType
 import com.ipons.tmdb.view.player.FORWARD_REWIND_EXOPLAYER
 import com.ipons.tmdb.view.player.youbora.YouboraManager
 

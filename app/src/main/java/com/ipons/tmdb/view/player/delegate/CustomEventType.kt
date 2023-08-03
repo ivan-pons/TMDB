@@ -1,4 +1,4 @@
-package com.ipons.tmdb.view.player
+package com.ipons.tmdb.view.player.delegate
 
 
 sealed class CustomEventType {

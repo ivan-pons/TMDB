@@ -2,7 +2,6 @@ package com.ipons.tmdb.view.player.delegate
 
 import com.ipons.domain.model.SourceBO
 import com.ipons.tmdb.view.player.AudioAdapter
-import com.ipons.tmdb.view.player.CustomEventType
 
 
 interface PlayerDelegate {
