@@ -1,16 +1,37 @@
 package com.ipons.tmdb.view.information
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.fragment.app.FragmentActivity
-import com.ipons.tmdb.R
+import com.ipons.domain.model.BasicItemBO
+import com.ipons.tmdb.databinding.ActivityInformationBinding
+import com.ipons.tmdb.extensions.serializable
 
 class InformationActivity : FragmentActivity() {
 
+    private lateinit var binding: ActivityInformationBinding
     private val informationViewModel by viewModels<InformationViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_information)
+        binding = ActivityInformationBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        intent.extras?.serializable<BasicItemBO>("ITEM_CLICKED")?.let {
+            bind(it)
+        } ?: run {
+            val toast = Toast.makeText(applicationContext, "Error Inesperado", Toast.LENGTH_SHORT)
+            toast.show()
+            finish()
+        }
+    }
+
+
+    fun bind(item: BasicItemBO) {
+        binding.item = item
+
+        binding.btnPlay.setOnClickListener {
+
+        }
     }
 }

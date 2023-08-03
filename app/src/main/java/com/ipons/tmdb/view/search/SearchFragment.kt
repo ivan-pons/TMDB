@@ -150,6 +150,15 @@ class SearchFragment : BaseFragment() {
     }
 
     private fun openItem(searchItem: BasicItemBO) {
-        startActivity(Intent(requireContext(), InformationActivity::class.java))
+        navigateToInformation(searchItem)
+    }
+
+    private fun navigateToInformation(item: BasicItemBO) {
+        val intent = Intent(requireContext(), InformationActivity::class.java).apply {
+            val bundle = Bundle()
+            bundle.putSerializable("ITEM_CLICKED", item)
+            putExtras(bundle)
+        }
+        startActivity(intent)
     }
 }

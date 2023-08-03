@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.ipons.domain.model.BasicItemBO
 import com.ipons.domain.model.ContainerBO
 import com.ipons.tmdb.MainActivity
 import com.ipons.tmdb.databinding.HomeFragmentBinding
@@ -57,8 +58,17 @@ class HomeFragment : Fragment() {
 
     private fun setAdapter(home: List<ContainerBO>) {
         binding.rvHome.adapter = HomeAdapter(home) {
-            startActivity(Intent(requireContext(), InformationActivity::class.java))
+            navigateToInformation(it)
         }
+    }
+
+    private fun navigateToInformation(item: BasicItemBO) {
+        val intent = Intent(requireContext(), InformationActivity::class.java).apply {
+            val bundle = Bundle()
+            bundle.putSerializable("ITEM_CLICKED", item)
+            putExtras(bundle)
+        }
+        startActivity(intent)
     }
 
 }
